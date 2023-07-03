@@ -1,0 +1,106 @@
+{% extends 'BlogFinal/padre.html'%}  
+{% load static %}
+{% block contenidoQueCambia %}
+
+
+        <!-- Page header with logo and tagline-->
+<br>
+<br>
+
+<br><br>
+
+    <div class="container1">
+        <div class="text-center my-5">
+            <h1 class="fw-bolder">Bienvenido a Macholiros Argentinos {{user.username}}!</h1>
+            <p class="lead mb-0"><b>Donde podras contar tus experiencias y compartir lo vivido</b></p>
+        </div>
+    </div>
+
+<br><br>
+
+
+{% if posts %}
+
+
+
+<form class="my-form" action="/BlogFinal/buscar/" method="GET">
+    <div class="input-group">
+    <input class="form-control" placeholder="Buscar..." aria-label="Buscar..." aria-describedby="button-search" name = "titulo" id = "titulo">
+    <input class="btn btn-dark" type="submit" value="Buscar" />
+      
+
+  </form>
+
+</div>
+
+{% endif %} 
+
+
+{% if publicaciones %}
+<div class="container">
+<p class="lead mb-0"><b>Resultados de: {{titulo}}</b></p>
+</div>
+<br>
+{% for post in publicaciones %}
+
+<div class="container">
+        <div class="my-elements">
+
+           <a href="#!"><img class="card-img-top" src="{{post.imagen.url}}" height="400px" alt="..." /></a>
+           
+           <div class="card-body">
+                        <div class="fecha-autor"><p>{{ post.autor }}</p>
+                        <p>{{ post.fecha }}</p></div>
+                   
+                        <div class="titulo" > <h2 class="card-title h4"><b>{{ post.titulo }}</b></h2></div>
+                       <div class="description"><p class="card-text">{{ post.descripcion }}</p></div>
+<br>
+                <div class="read-more">  <a class="btn btn-dark" href="{% url 'verPost' post.id %}">Ver mas →</a></div>
+                            <br>
+                            <br>
+                         </div>
+                    </div>
+                    
+</div>
+
+{% endfor %}
+{% endif %}
+
+
+<br>
+
+
+
+{% for post in posts %}
+
+<div class="container">
+
+    <div class="col-lg-7">
+        <div class="my-elements">
+
+          <img class="card-img-top" src="{{post.imagen.url}}" height="400px" alt="..." />
+           <div class="card-body">
+                        <div class="fecha-autor"><p>{{ post.autor }}</p>
+                        <p>{{ post.fecha }}</p></div>
+                   
+                        <div class="titulo" > <h2 class="card-title h4"><b>{{ post.titulo }}</b></h2></div>
+                       <div class="description"><p class="card-text">{{ post.descripcion }}</p></div>
+<br>
+                <div class="read-more">  <a class="btn btn-dark" href="{% url 'verPost' post.id %}">Ver mas </a> </div>
+                            <br>
+                            <br>
+                         </div>
+                    </div>
+                    
+</div>
+
+
+</div>
+                   
+<br><br>
+{% endfor %}
+
+<br><br><br><br><br><br><br><br><br><br><br>
+
+
+{% endblock %}

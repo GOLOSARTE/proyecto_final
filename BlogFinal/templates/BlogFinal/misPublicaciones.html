@@ -1,0 +1,60 @@
+{% extends 'BlogFinal/padre.html'%}  
+{% load static %}
+{% block contenidoQueCambia %}
+ 
+
+
+
+
+
+
+
+{% for post in posts %}+}
+{% if post.autor == usuario %}
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="col-lg-6">
+        <div class="my-elements">
+
+           <a href="#!"><img class="card-img-top" src="{{post.imagen.url}}" height="400px" alt="..." /></a>
+           
+           <div class="card-body">
+                        <div class="fecha-autor"><p>{{ post.autor }}</p>
+                        <p>{{ post.fecha }}</p></div>
+                   
+                        <div class="titulo" > <h2 class="card-title h4"><b>{{ post.titulo }}</b></h2></div>
+                       <div class="description"><p class="card-text">{{ post.descripcion }}</p></div>
+<br>
+                <div class="read-more">  <a class="btn btn-dark" href="{% url 'verPost' post.id %}">Ver mas →</a></div>
+                            <br>
+                            <br>
+                         </div>
+                    </div>
+                    
+</div>
+
+</div>
+{% endif %}
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+

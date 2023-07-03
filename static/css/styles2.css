@@ -1,0 +1,7 @@
+body {
+
+    background-image: url(/static/assets/img/portada.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

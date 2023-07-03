@@ -1,0 +1,48 @@
+{% extends 'BlogFinal/padre.html'%}  
+{% load static %}
+{% block contenidoQueCambia %}
+ 
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+    <div class="container">
+        <header class="py-5 bg-light border-bottom mb-4">
+       <h2 class="text-center text-dark">
+           Acerca de Mi
+       </h2>
+       <br>
+       <div class="row g-4">
+           <div class="col-md-6 col-lg-3">
+               <div class="card bg-success">
+                    <div class="card-body text-center">
+                        <img class="border" src="{% static '/assets/img/gaston.jpg' %}" class="rounded-circle mb-3" width="150px">
+                    <h3 class="card-title mb-3">Gaston Oscar LASARTE</h3>
+                    
+                    </div>
+               </div>
+           </div>
+           <div class="col">
+            <div class="">
+                 <div class="text-center"><br><br><br>
+                    <p>Hola, mi nombre es Gastón Oscar Lasarte y tengo 38 años. Actualmente estoy realizando un curso de Python para ampliar mis conocimientos en programación. Este curso marca mi primer contacto directo con el mundo de la programación, y estoy entusiasmado por aprender y crecer en este campo. Además, estoy cursando una licenciatura en Tecnologías de la Información y Comunicaciones, y espero completarla este año. Quisiera además compartir una foto con ustedes en la que se encuentra mi fiel compañero, Teo que ha estado a mi lado, brindándome apoyo y compañía durante la cursada.</p>
+                 
+                 </div>
+            </div>
+        </div>
+       </div>
+    </div>
+        </header>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'BlogFinal/login.html'%}  
+{% load static %}
+{% block contenidoQueCambia %}
+ 
+
+<body>
+    <header>
+        <h1>Registro
+            
+        </h1>
+    </header>
+    <main>
+        <form id="login_form" class="form_class" action="" method="post">
+            <div class="form_div">
+                <div class="field_class">
+                    {% csrf_token %}
+                    
+                    <table> {{ form.as_p }}</table> 
+            </div>
+            <div class="submit_class">
+             
+                <input type="submit", value="Enviar">
+            </div>
+
+{% endblock %}
